@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Bhineka Djaja – Kopi Bali Cap Kupu-Kupu Bola Dunia</title>
+<meta name="description" content="Hubungi Bhineka Djaja melalui telepon, email, atau kunjungi kedai kopi kami di Denpasar, Bali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>if(localStorage.getItem('bhineka-tema')==='dark'||(!localStorage.getItem('bhineka-tema')&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}</script>
+<style>
+  /* ── Layout Halaman Kontak ────────────────────────────────── */
+  .kontak-wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 40px auto 70px;
+    padding: 0 6%;
+  }
+
+  /* ── Kolom Teks Kontak ────────────────────────────────────── */
+  .kontak-teks h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 2.8vw, 36px);
+    font-weight: 800;
+    color: var(--cokelat2);
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.22);
+    margin-bottom: 18px;
+    line-height: 1.2;
+    letter-spacing: .02em;
+  }
+  .kontak-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--teks);
+    margin-bottom: 36px;
+    text-align: justify;
+  }
+
+  /* ── Item Alamat, Telepon, Email ──────────────────────────── */
+  .kontak-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+  .kontak-item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .kontak-item-header img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .kontak-item-header h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--cokelat2);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+  }
+  .kontak-item-detail {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--teks);
+    padding-left: 36px;
+  }
+  .kontak-item-detail a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color .2s;
+  }
+  .kontak-item-detail a:hover {
+    color: var(--cokelat);
+  }
+
+  /* ── Bagian Media Sosial ──────────────────────────────────── */
+  .medsos-section h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 800;
+    color: var(--cokelat2);
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.22);
+    margin-bottom: 14px;
+    line-height: 1.2;
+    letter-spacing: .02em;
+  }
+  .medsos-section p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--teks);
+    margin-bottom: 24px;
+    text-align: justify;
+  }
+  .medsos-baris {
+    display: flex;
+    gap: 16px;
+  }
+  .medsos-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--cokelat);
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+    transition: transform .2s ease, background .2s ease;
+  }
+  .medsos-btn:hover {
+    background: var(--cokelat2);
+    transform: translateY(-2px);
+  }
+  .medsos-btn img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  /* ── Kolom Gambar Ilustrasi Kanan ─────────────────────────── */
+  .kontak-gambar {
+    width: min(100%, 450px);
+    justify-self: center;
+  }
+  .kontak-gambar img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* ── Responsive Tablet / iPad (<= 900px) ──────────────────── */
+  @media (max-width: 900px) {
+    .kontak-wrap {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 0 24px;
+      margin: 30px auto 50px;
+    }
+    .kontak-gambar {
+      order: -1;
+      max-width: 320px;
+    }
+    .kontak-desc, .medsos-section p {
+      font-size: 14.5px;
+      text-align: left;
+    }
+  }
+
+  /* ── Responsive HP / Smartphone (<= 600px) ────────────────── */
+  @media (max-width: 600px) {
+    .kontak-wrap {
+      gap: 28px;
+      padding: 0 16px;
+      margin: 20px auto 36px;
+    }
+    .kontak-gambar {
+      max-width: 240px;
+    }
+    .kontak-teks h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .kontak-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .kontak-list {
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    .kontak-item-header {
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .kontak-item-header img {
+      width: 20px;
+      height: 20px;
+    }
+    .kontak-item-header h3 {
+      font-size: 15px;
+    }
+    .kontak-item-detail {
+      font-size: 13.5px;
+      line-height: 1.55;
+      padding-left: 30px;
+    }
+    .medsos-section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .medsos-section p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    .medsos-baris {
+      gap: 14px;
+    }
+    .medsos-btn {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  /* ── Dark Mode Overrides ──────────────────────────────────── */
+  [data-theme="dark"] .medsos-btn {
+    background: #2a1c16;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  [data-theme="dark"] .medsos-btn:hover {
+    background: #3e281f;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGASI ═══ -->
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Menu utama">
+    <a class="logo" href="index.html"><img src="images/Logo.png" alt="Butterfly Globe Brand 1935"></a>
+    <span class="nav-current-page">Contact</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="history.html">History</a>
+      <a href="service.html">Service &amp; Training</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="tema-toggle" id="btn-tema" aria-label="Ganti mode gelap/terang" type="button" title="Ganti mode gelap/terang">
+        <svg class="ikon-bulan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="ikon-matahari" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="kontak-wrap">
+
+    <!-- Kolom Kiri: Informasi Kontak & Media Sosial -->
+    <div class="kontak-teks">
+
+      <h1>Hubungi Kami</h1>
+      <p class="kontak-desc">Untuk informasi lebih lanjut tentang produk dan layanan Bhineka Djaja, silakan hubungi kami melalui dukungan telepon dan e-mail kami untuk mendapatkan tanggapan cepat atas kebutuhan Anda.</p>
+
+      <div class="kontak-list">
+
+        <!-- 1. Alamat -->
+        <div class="kontak-item">
+          <div class="kontak-item-header">
+            <img src="images/alamat.png" alt="" aria-hidden="true">
+            <h3>ALAMAT</h3>
+          </div>
+          <p class="kontak-item-detail">Jl. Gajah Mada No. 80 Denpasar, Bali</p>
+        </div>
+
+        <!-- 2. Telepon -->
+        <div class="kontak-item">
+          <div class="kontak-item-header">
+            <img src="images/telepon.png" alt="" aria-hidden="true">
+            <h3>TELEPON</h3>
+          </div>
+          <p class="kontak-item-detail">
+            <a href="tel:+62361224016">+62361 224 016</a> / <a href="tel:+62361224720">+62361 224 720</a>
+          </p>
+        </div>
+
+        <!-- 3. Email -->
+        <div class="kontak-item">
+          <div class="kontak-item-header">
+            <img src="images/email.png" alt="" aria-hidden="true">
+            <h3>EMAIL</h3>
+          </div>
+          <p class="kontak-item-detail">
+            <a href="mailto:info@bhinekadjaja.com">info@bhinekadjaja.com</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bagian Media Sosial -->
+      <section class="medsos-section">
+        <h2>Media Sosial</h2>
+        <p>Kami juga tersedia di bermacam sosial media. Like dan follow di akun kami untuk mendapatkan info terbaru seputar Bhineka Djaja.</p>
+        <div class="medsos-baris">
+          <a class="medsos-btn" href="#" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+          <a class="medsos-btn" href="#" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Kolom Kanan: Foto Kartun Penari Bali Memegang Kopi -->
+    <div class="kontak-gambar">
+      <img src="images/Foto_kartun_memegang_kopi.png" alt="Ilustrasi penari Bali memegang secangkir kopi" loading="lazy">
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-merk">
+    <img src="images/Logo.png" alt="Butterfly Globe Brand 1935">
+    <p>Taste The Legend</p>
+  </div>
+  <div>
+    <h4>Menu</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="service.html">Service &amp; Training</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Help</h4>
+    <ul><li><a href="contact.html">Contact Us</a></li></ul>
+  </div>
+  <div>
+    <h4>Our Social Media</h4>
+    <div class="sosial-baris">
+      <a class="sosial" href="#" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+      <a class="sosial" href="#" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+    </div>
+  </div>
+</footer>
+<script src="transisi.js"></script>
+
+</body>
+</html>

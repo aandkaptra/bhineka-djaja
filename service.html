@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Layanan &amp; Pelatihan | Bhineka Djaja – Kopi Bali Cap Kupu-Kupu Bola Dunia</title>
+<meta name="description" content="Layanan penyewaan, servis mesin kopi, dan pelatihan seni kopi khas Bali oleh Bhineka Djaja.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>if(localStorage.getItem('bhineka-tema')==='dark'||(!localStorage.getItem('bhineka-tema')&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}</script>
+<style>
+  /* ── Hero Layanan & Pelatihan ─────────────────────────────── */
+  .service-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    min-height: 190px;
+    background: var(--banner-grad);
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .service-hero::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: clamp(280px, 32vw, 440px);
+    background: url('images/ornamen-bali.png') right bottom / contain no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .service-hero h1 {
+    position: relative;
+    z-index: 2;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 2.8vw, 38px);
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    letter-spacing: .02em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* ── Konten Layanan & Pelatihan ───────────────────────────── */
+  .service-konten {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 44px 8% 70px;
+  }
+
+  .service-section {
+    margin-bottom: 40px;
+  }
+  .service-section h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 2.4vw, 32px);
+    color: var(--cokelat2);
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.22);
+    margin-bottom: 14px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+  .service-section p {
+    font-size: 14.5px;
+    line-height: 1.85;
+    text-align: justify;
+    color: var(--teks);
+  }
+
+  /* ── Judul Materi Pelatihan (Center) ───────────────────────── */
+  .materi-judul {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: clamp(26px, 2.6vw, 36px);
+    color: var(--cokelat2);
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.22);
+    text-align: center;
+    margin: 48px 0 38px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+
+  /* ── Grid Materi Pelatihan ─────────────────────────────────── */
+  .materi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 28px;
+  }
+  .materi-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .materi-icon-wrap {
+    height: 72px;
+    width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .materi-icon-wrap img {
+    max-height: 62px;
+    max-width: 62px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .materi-item h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .materi-item p {
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: #4a4a4a;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* ── Dark Mode Overrides ──────────────────────────────────── */
+  [data-theme="dark"] .materi-item h3 {
+    color: var(--teks);
+  }
+  [data-theme="dark"] .materi-item p {
+    color: var(--teks-muted);
+  }
+  [data-theme="dark"] .materi-icon-wrap {
+    background: var(--bg-card);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px var(--shadow-sm);
+    border: 1px solid var(--border);
+  }
+
+  /* ── Responsive Tablet / iPad (<= 900px) ──────────────────── */
+  @media (max-width: 900px) {
+    .service-hero { min-height: 135px; padding: 0 24px; }
+    .service-hero::after { width: clamp(200px, 34vw, 280px); right: 0; }
+    .service-hero h1 { font-size: 22px; }
+    .service-konten { padding: 36px 28px 50px; }
+    .materi-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 24px;
+    }
+  }
+
+  /* ── Responsive HP / Smartphone (<= 600px) ────────────────── */
+  @media (max-width: 600px) {
+    .service-hero { min-height: 105px; padding: 0 16px; }
+    .service-hero::after { width: 145px; right: 0; opacity: 0.95; }
+    .service-hero h1 { font-size: 18px; }
+    .service-konten { padding: 24px 16px 36px; }
+    .service-section { margin-bottom: 28px; }
+    .service-section h2 { font-size: 20px; margin-bottom: 10px; }
+    .service-section p { font-size: 13.5px; line-height: 1.7; text-align: left; }
+    .materi-judul { font-size: 22px; margin: 36px 0 24px; }
+    .materi-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .materi-icon-wrap { height: 64px; width: 64px; margin-bottom: 10px; }
+    .materi-icon-wrap img { max-height: 56px; max-width: 56px; }
+    .materi-item h3 { font-size: 14.5px; }
+    .materi-item p { font-size: 12.5px; line-height: 1.55; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGASI ═══ -->
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Menu utama">
+    <a class="logo" href="index.html"><img src="images/Logo.png" alt="Butterfly Globe Brand 1935"></a>
+    <span class="nav-current-page">Service &amp; Training</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="history.html">History</a>
+      <a href="service.html" aria-current="page">Service &amp; Training</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="tema-toggle" id="btn-tema" aria-label="Ganti mode gelap/terang" type="button" title="Ganti mode gelap/terang">
+        <svg class="ikon-bulan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="ikon-matahari" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="service-hero">
+    <h1>Layanan &amp; Pelatihan</h1>
+  </section>
+
+  <!-- ═══ KONTEN ═══ -->
+  <div class="service-konten">
+
+    <!-- Section Layanan -->
+    <section class="service-section">
+      <h2>LAYANAN</h2>
+      <p>Kopi Bali menawarkan berbagai mesin kopi dan aksesoris yang sesuai dengan situasi apapun. Baik membeli atau menyewa, Kopi Bali memiliki fasilitas mesin kopi untuk digunakan di pameran, konferensi, dan berbagai fungsi dari semua kegiatan. Dukungan merupakan yang terbaik, termasuk perbaikan dan servis dilakukan oleh tim insinyur kami yang berpengalaman. Untuk informasi lebih lanjut tentang skema penjualan dan penyewaan, jangan ragu untuk menghubungi kami</p>
+    </section>
+
+    <!-- Section Pelatihan -->
+    <section class="service-section">
+      <h2>PELATIHAN</h2>
+      <p>Bali Coffee House dari Kopi Bali menawarkan pelatihan dalam seni kopi, memberikan para profesional keterampilan yang diperlukan untuk membuat kopi terbaik. Persiapan espresso yang sangat baik tergantung pada banyak faktor seperti kualitas campuran kopi, fungsi sempurna mesin espresso dan penggiling dan yang paling penting, penguasaan teknis seluruh proses kopi. Pelatihan ini mencakup semua aspek proses kopi, dimulai dengan tanaman kopi itu sendiri dan varietas yang berbeda, bagaimana ditanam dan dipanen, serta pencampuran dan pemanggangan kopi. Cara memilih dan memanfaatkan mesin espresso sebaik-baiknya dan juga moka pot juga dijelaskan secara rinci. Peserta kursus diperlihatkan cara menghindari kesalahan untuk mencapai espresso yang sempurna. Mereka diajari cara mencapai busa milk terbaik untuk cappuccino, dan juga cara membuat berbagai minuman kopi termasuk latte, mocha, dan favorit lainnya seperti cappuccino beku dan campuran es lainnya.</p>
+    </section>
+
+    <!-- Section Materi Pelatihan -->
+    <section>
+      <h2 class="materi-judul">MATERI PELATIHAN</h2>
+
+      <div class="materi-grid">
+
+        <!-- 1. Penanaman Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/penanaman_kopi.png" alt="Penanaman Kopi" loading="lazy">
+          </div>
+          <h3>Penanaman Kopi</h3>
+          <p>Pelajari siklus hidup kopi mulai dari pemilihan bibit unggul, perawatan tanah, hingga teknik panen ceri merah untuk kualitas biji terbaik.</p>
+        </article>
+
+        <!-- 2. Teknik Pembakaran -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/teknik_pembakaran.png" alt="Teknik Pembakaran" loading="lazy">
+          </div>
+          <h3>Teknik Pembakaran</h3>
+          <p>Pahami profil roasting (light, medium, dark) dan bagaimana suhu mempengaruhi aroma serta karakteristik rasa dari biji kopi.</p>
+        </article>
+
+        <!-- 3. Penggilingan Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/penggilingan_kopi.png" alt="Penggilingan Kopi" loading="lazy">
+          </div>
+          <h3>Penggilingan Kopi</h3>
+          <p>Ukuran itu penting. Pelajari konsistensi gilingan agar hasil seduhan kopi kamu tidak terlalu pahit atau asam.</p>
+        </article>
+
+        <!-- 4. Memilih Mesin Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/memilih_mesin_kopi.png" alt="Memilih Mesin Kopi" loading="lazy">
+          </div>
+          <h3>Memilih Mesin Kopi</h3>
+          <p>Jangan salah beli. Tips memilih alat tempur kopi terbaik sesuai budget dan kebutuhan kedai kamu.</p>
+        </article>
+
+        <!-- 5. Menyeduh Espresso -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/menyeduh_espresso.png" alt="Menyeduh Espresso" loading="lazy">
+          </div>
+          <h3>Menyeduh Espresso</h3>
+          <p>Rahasia di balik "God Shot". Cara mendapatkan espresso nikmat sebagai dasar semua minuman kopi.</p>
+        </article>
+
+        <!-- 6. Menggunakan Mesin Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/menggunakan_mesin_kopi.png" alt="Menggunakan Mesin Kopi" loading="lazy">
+          </div>
+          <h3>Menggunakan Mesin Kopi</h3>
+          <p>Kuasai alatmu. Cara benar mengoperasikan mesin espresso dan steaming susu agar hasilnya silky.</p>
+        </article>
+
+        <!-- 7. Merawat Mesin Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/merawat_mesin_kopi.png" alt="Merawat Mesin Kopi" loading="lazy">
+          </div>
+          <h3>Merawat Mesin Kopi</h3>
+          <p>Investasi jangka panjang. Tips membersihkan mesin agar performa tetap prima dan kopi selalu enak.</p>
+        </article>
+
+        <!-- 8. Resep Kopi -->
+        <article class="materi-item">
+          <div class="materi-icon-wrap">
+            <img src="images/resep_kopi.png" alt="Resep Kopi" loading="lazy">
+          </div>
+          <h3>Resep Kopi</h3>
+          <p>Pelajari takaran susu dan kopi untuk membuat menu favorit pelanggan masa kini.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-merk">
+    <img src="images/Logo.png" alt="Butterfly Globe Brand 1935">
+    <p>Taste The Legend</p>
+  </div>
+  <div>
+    <h4>Menu</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="service.html">Service &amp; Training</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Help</h4>
+    <ul><li><a href="contact.html">Contact Us</a></li></ul>
+  </div>
+  <div>
+    <h4>Our Social Media</h4>
+    <div class="sosial-baris">
+      <a class="sosial" href="#" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+      <a class="sosial" href="#" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+    </div>
+  </div>
+</footer>
+<script src="transisi.js"></script>
+
+</body>
+</html>

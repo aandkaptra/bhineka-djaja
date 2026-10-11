@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produk | Bhineka Djaja – Kopi Bali Cap Kupu-Kupu Bola Dunia</title>
+<meta name="description" content="Semua produk kopi dan teh Bhineka Djaja. Kopi Bali pilihan terbaik sejak 1935.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>if(localStorage.getItem('bhineka-tema')==='dark'||(!localStorage.getItem('bhineka-tema')&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}</script>
+<style>
+  /* ── Hero Produk ─────────────────────────────────────────── */
+  .produk-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    min-height: 190px;
+    background: var(--banner-grad);
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  /* Karakter ornamen Bali di kanan */
+  .produk-hero::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: clamp(280px, 32vw, 440px);
+    background: url('images/ornamen-bali.png') right bottom / contain no-repeat;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .produk-hero-teks {
+    position: relative;
+    z-index: 2;
+  }
+  .produk-hero-teks h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(28px, 2.8vw, 38px);
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    letter-spacing: .02em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* ── Search Bar ───────────────────────────────────────────── */
+  .search-wrap {
+    padding: 36px 8% 10px;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #f5ede4;
+    border: none;
+    border-radius: 40px;
+    padding: 14px 28px;
+    max-width: 900px;
+    width: 100%;
+  }
+  .search-box svg {
+    flex: none;
+    color: #a07050;
+    width: 22px;
+    height: 22px;
+  }
+  .search-box input {
+    border: none;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #a07050;
+    width: 100%;
+    outline: none;
+  }
+  .search-box input::placeholder {
+    color: #b89070;
+  }
+
+  /* ── Kategori & Grid ──────────────────────────────────────── */
+  .kategori {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 32px 8% 0;
+  }
+  .kategori-judul {
+    display: inline-block;
+    background: linear-gradient(180deg, #7c4938 0%, #aa6e4f 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 36px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 8px rgba(90,45,34,.2);
+    letter-spacing: .03em;
+  }
+  .produk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+    margin-bottom: 48px;
+  }
+
+  /* ── Kartu Produk ─────────────────────────────────────────── */
+  .kartu {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 16px;
+    transition: transform .2s ease;
+  }
+  .kartu:hover {
+    transform: translateY(-4px);
+  }
+  .kartu-top {
+    background: linear-gradient(180deg, #846152 0%, #b88c6b 100%);
+    border-radius: 16px;
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 16px 16px 0;
+    box-shadow: 0 4px 10px rgba(90,45,34,.12);
+  }
+  .kartu-sheet {
+    background: #ffffff;
+    width: 66%;
+    height: 100%;
+    border-radius: 2px 2px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px 4px;
+  }
+  .kartu-sheet img {
+    max-height: 145px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.22));
+  }
+  .kartu-body {
+    background: #ffffff;
+    border: 1.5px solid #387461;
+    border-radius: 14px;
+    padding: 12px 14px 12px;
+    margin-top: -16px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  }
+  .kartu-nama {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    margin-bottom: 3px;
+    line-height: 1.25;
+  }
+  .kartu-harga {
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  .bintang {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 8px;
+  }
+  .bintang svg {
+    width: 12px;
+    height: 12px;
+  }
+  .kartu-tombol {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 5px 16px;
+    border-radius: 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #fff;
+    background: #387461;
+    text-decoration: none;
+    letter-spacing: .02em;
+    transition: background .2s, transform .15s;
+  }
+  .kartu-tombol:hover {
+    background: #275647;
+    transform: translateY(-1px);
+  }
+
+  /* ── Dark Mode Overrides ──────────────────────────────────── */
+  [data-theme="dark"] .search-box {
+    background: var(--bg-card);
+    box-shadow: inset 0 0 0 1px var(--border);
+  }
+  [data-theme="dark"] .search-box input {
+    color: var(--teks);
+  }
+  [data-theme="dark"] .search-box input::placeholder {
+    color: var(--teks-muted);
+  }
+  [data-theme="dark"] .search-box svg {
+    color: var(--cokelat);
+  }
+  [data-theme="dark"] .kartu-body {
+    background: var(--bg-card);
+    border-color: #4da386;
+    box-shadow: 0 4px 16px var(--shadow-sm);
+  }
+  [data-theme="dark"] .kartu-nama {
+    color: var(--teks);
+  }
+  [data-theme="dark"] .kartu-harga {
+    color: var(--teks-muted);
+  }
+  [data-theme="dark"] .kartu-sheet {
+    background: #271a14;
+  }
+
+  /* ── Responsive Tablet / iPad (<= 900px) ──────────────────── */
+  @media (max-width: 900px) {
+    .produk-hero { min-height: 135px; padding: 0 24px; }
+    .produk-hero::after { width: clamp(200px, 34vw, 280px); right: 0; }
+    .produk-hero-teks h1 { font-size: 22px; }
+    .search-wrap { padding: 20px 24px 4px; }
+    .kategori { padding: 24px 20px 0; }
+    .produk-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; }
+    .kartu-top { height: 175px; }
+    .kartu-sheet img { max-height: 125px; }
+  }
+
+  /* ── Responsive HP / Smartphone (<= 600px) ────────────────── */
+  @media (max-width: 600px) {
+    .produk-hero { min-height: 105px; padding: 0 16px; }
+    .produk-hero::after { width: 145px; right: 0; opacity: 0.95; }
+    .produk-hero-teks h1 { font-size: 18px; }
+    .search-wrap { padding: 16px 14px 2px; }
+    .search-box { padding: 8px 16px; border-radius: 20px; }
+    .search-box input { font-size: 13.5px; }
+    .search-box svg { width: 18px; height: 18px; }
+    .kategori { padding: 20px 16px 0; }
+    .kategori-judul { font-size: 16px; padding: 4px 24px; margin-bottom: 18px; border-radius: 8px; }
+    .produk-grid { grid-template-columns: 1fr; gap: 20px; max-width: 340px; margin: 0 auto 36px; }
+    .kartu-top { height: 180px; }
+    .kartu-sheet img { max-height: 135px; }
+    .kartu-body { padding: 12px 14px; }
+    .kartu-nama { font-size: 13.5px; }
+    .kartu-harga { font-size: 12px; }
+    .kartu-tombol { padding: 6px 18px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGASI ═══ -->
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Menu utama">
+    <a class="logo" href="index.html"><img src="images/Logo.png" alt="Butterfly Globe Brand 1935"></a>
+    <span class="nav-current-page">Product</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html" aria-current="page">Product</a>
+      <a href="history.html">History</a>
+      <a href="service.html">Service &amp; Training</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="tema-toggle" id="btn-tema" aria-label="Ganti mode gelap/terang" type="button" title="Ganti mode gelap/terang">
+        <svg class="ikon-bulan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="ikon-matahari" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="produk-hero">
+    <div class="produk-hero-teks">
+      <h1>Semua Produk Kami</h1>
+    </div>
+  </section>
+
+  <!-- ═══ SEARCH ═══ -->
+  <div class="search-wrap">
+    <label class="search-box" for="cari-produk">
+      <!-- Ikon kaca pembesar -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input id="cari-produk" type="search" placeholder="Cari Produk" aria-label="Cari Produk">
+    </label>
+  </div>
+
+  <!-- ═══ KATEGORI KOPI ═══ -->
+  <section class="kategori" aria-labelledby="kat-kopi">
+    <h2 class="kategori-judul" id="kat-kopi">Kopi</h2>
+
+    <div class="produk-grid">
+
+      <!-- 1. Kopi Toraja Tas -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Toraja Tas" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Toraja Tas</p>
+          <p class="kartu-harga">Rp. 40.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 2. Kopi Bali Gold Tas -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Bali Gold Tas" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Bali Gold Tas</p>
+          <p class="kartu-harga">Rp. 40.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 3. Kopi Bali Coffee Tas -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Bali Coffee Tas" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Bali Coffee Tas</p>
+          <p class="kartu-harga">Rp. 40.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 4. Kopi Bali Kintamani -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Bali Kintamani" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Bali Kintamani</p>
+          <p class="kartu-harga">Rp. 40.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 5. Kopi Bali Original Alumunium -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Bali Original Alumunium" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Bali Original Alumunium</p>
+          <p class="kartu-harga">Rp. 30.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 6. Kopi Bali Gold Spesial -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Bali Gold Spesial" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Bali Gold Spesial</p>
+          <p class="kartu-harga">Rp. 30.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 7. Kopi Toraja Biru -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Toraja Biru" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Toraja Biru</p>
+          <p class="kartu-harga">Rp. 40.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 8. Kopi Best of Bali -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Best of Bali" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Best of Bali</p>
+          <p class="kartu-harga">Rp. 85.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 9. Kopi Best of Indonesia -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Kopi Best of Indonesia" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Kopi Best of Indonesia</p>
+          <p class="kartu-harga">Rp. 85.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+    </div><!-- /produk-grid kopi -->
+  </section>
+
+  <!-- ═══ KATEGORI TEH ═══ -->
+  <section class="kategori" aria-labelledby="kat-teh">
+    <h2 class="kategori-judul" id="kat-teh">Teh</h2>
+
+    <div class="produk-grid">
+
+      <!-- 1. Teh Kotak Krem 90 Gram Loose -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Krem 90 Gram Loose" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Krem 90 Gram Loose</p>
+          <p class="kartu-harga">Rp. 50.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 2. Teh Kotak Batik 90 Gram Loose -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Batik 90 Gram Loose" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Batik 90 Gram Loose</p>
+          <p class="kartu-harga">Rp. 50.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 3. Teh Kotak Batik 25 Bags -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Batik 25 Bags" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Batik 25 Bags</p>
+          <p class="kartu-harga">Rp. 30.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 4. Teh Kotak Mango Fruit 25 Bags -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Mango Fruit 25 Bags" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Mango Fruit 25 Bags</p>
+          <p class="kartu-harga">Rp. 20.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 5. Teh Kotak Mangosteen Fruit 25 Bags -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Mangosteen Fruit 25 Bags" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Mangosteen Fruit 25 Bags</p>
+          <p class="kartu-harga">Rp. 20.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 6. Teh Kotak Lemongrass Fruit 25 Bags -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Lemongrass Fruit 25 Bags" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Lemongrass Fruit 25 Bags</p>
+          <p class="kartu-harga">Rp. 20.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+      <!-- 7. Teh Kotak Passion Fruit 25 Bags -->
+      <article class="kartu">
+        <div class="kartu-top">
+          <div class="kartu-sheet">
+            <img src="images/produk-kopi.png" alt="Teh Kotak Passion Fruit 25 Bags" loading="lazy">
+          </div>
+        </div>
+        <div class="kartu-body">
+          <p class="kartu-nama">Teh Kotak Passion Fruit 25 Bags</p>
+          <p class="kartu-harga">Rp. 20.000</p>
+          <div class="bintang" aria-label="Rating 4 bintang">
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#f5a623" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+            <svg fill="#ddd" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.954L10 0l2.951 5.956 6.561.954-4.756 4.635 1.122 6.545z"/></svg>
+          </div>
+          <a href="#" class="kartu-tombol">Lihat Detail</a>
+        </div>
+      </article>
+
+    </div><!-- /produk-grid teh -->
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-merk">
+    <img src="images/Logo.png" alt="Butterfly Globe Brand 1935">
+    <p>Taste The Legend</p>
+  </div>
+  <div>
+    <h4>Menu</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="service.html">Service &amp; Training</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Help</h4>
+    <ul><li><a href="contact.html">Contact Us</a></li></ul>
+  </div>
+  <div>
+    <h4>Our Social Media</h4>
+    <div class="sosial-baris">
+      <a class="sosial" href="#" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+      <a class="sosial" href="#" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const input = document.getElementById('cari-produk');
+  const kategoriSections = document.querySelectorAll('.kategori');
+
+  input.addEventListener('input', function () {
+    const query = this.value.toLowerCase().trim();
+
+    kategoriSections.forEach(function (section) {
+      const cards = section.querySelectorAll('.kartu');
+      let visibleCount = 0;
+
+      cards.forEach(function (card) {
+        const nama = card.querySelector('.kartu-nama').textContent.toLowerCase();
+        const cocok = nama.includes(query);
+        card.style.display = cocok ? '' : 'none';
+        if (cocok) visibleCount++;
+      });
+
+      // Sembunyikan seluruh kategori jika tidak ada produk yang cocok
+      section.style.display = visibleCount === 0 ? 'none' : '';
+    });
+  });
+})();
+</script>
+<script src="transisi.js"></script>
+
+</body>
+</html>

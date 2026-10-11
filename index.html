@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bhineka Djaja | Kopi Bali Cap Kupu-Kupu Bola Dunia</title>
+<meta name="description" content="Bhineka Djaja, kedai kopi khas Bali sejak tahun 1935.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>if(localStorage.getItem('bhineka-tema')==='dark'||(!localStorage.getItem('bhineka-tema')&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}</script>
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Menu utama">
+    <a class="logo" href="index.html"><img src="images/Logo.png" alt="Butterfly Globe Brand 1935"></a>
+    <span class="nav-current-page">Home</span>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="product.html">Product</a>
+      <a href="history.html">History</a>
+      <a href="service.html">Service &amp; Training</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="tema-toggle" id="btn-tema" aria-label="Ganti mode gelap/terang" type="button" title="Ganti mode gelap/terang">
+        <svg class="ikon-bulan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="ikon-matahari" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-teks">
+      <h1>Bhineka Djaja</h1>
+      <p class="lead">Kopi Bali Cap Kupu-Kupu Bola Dunia. Berdiri sejak tahun 1935 menjadikan Bhineka Djaja sebagai kedai kopi khas Bali dengan cita rasa yang legenda.</p>
+      <a class="tombol" href="history.html">Selengkapnya</a>
+    </div>
+    <img class="hero-gambar" src="images/Foto_kartun_memegang_kopi.png" alt="Ilustrasi penari Bali memegang secangkir kopi">
+  </section>
+
+  <section class="fitur">
+    <article class="item">
+      <h3><img class="ikon" src="images/ikon-kopi.png" alt="" width="40" height="40">100% Kopi Alami</h3>
+      <p>Kopi Bali menawarkan kopi dari berbagai perkebunan di Indonesia, yaitu Kintamani, Toraja, Mandhailing, Flores, dan daerah-daerah yang lebih dihargai.</p>
+    </article>
+    <article class="item">
+      <h3><img class="ikon" src="images/ikon-toko.png" alt="" width="40" height="40">Berdiri Sejak Tahun 1935</h3>
+      <p>Berdiri sejak tahun 1935 menjadikan Bhineka Djaja sebagai kedai kopi khas Bali dengan cita rasa yang legenda.</p>
+    </article>
+    <article class="item">
+      <h3><img class="ikon" src="images/ikon-piala.png" alt="" width="40" height="40">Produk Dengan Kualitas Tinggi</h3>
+      <p>Kopi Bali memahami permintaan pelanggan untuk memiliki campuran mereka sendiri dan berbagi gagasan tentang secangkir kopi yang sempurna. Dengan pemikiran ini, selain menawarkan asal tunggal atau campuran kopi tradisional, Kopi Bali mengundang setiap pelanggan untuk mengunjungi pabrik dan membantu mereka untuk membuat campuran khusus mereka sendiri dengan mencampur berbagai jenis biji kopi dan memanggangnya dengan sempurna.</p>
+    </article>
+  </section>
+
+  <section class="galeri">
+    <h2>Galeri Bhineka Djaja</h2>
+    <div class="grid">
+      <figure class="g1"><img src="images/Rectangle_109.png" alt="Pelanggan duduk di bar kedai kopi" loading="lazy"></figure>
+      <figure class="g2"><img src="images/Rectangle_110.png" alt="Dispenser biji kopi di dinding kedai" loading="lazy"></figure>
+      <figure class="g3"><img src="images/Rectangle_111.png" alt="Pelanggan di depan kedai Bhineka Djaja, Jl. Gajah Mada No. 80 Denpasar" loading="lazy"></figure>
+      <figure class="g4"><img src="images/Rectangle_112.png" alt="Sudut kedai dengan patung kayu dan papan menu" loading="lazy"></figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-merk">
+    <img src="images/Logo.png" alt="Butterfly Globe Brand 1935">
+    <p>Taste The Legend</p>
+  </div>
+  <div>
+    <h4>Menu</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="service.html">Service &amp; Training</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Help</h4>
+    <ul><li><a href="contact.html">Contact Us</a></li></ul>
+  </div>
+  <div>
+    <h4>Our Social Media</h4>
+    <div class="sosial-baris">
+     <a class="sosial" href="#" aria-label="Instagram"><img src="images/instagram.png" alt=""></a>
+     <a class="sosial" href="#" aria-label="Facebook"><img src="images/facebook.png" alt=""></a>
+    </div>
+  </div>
+</footer>
+<script src="transisi.js"></script>
+
+</body>
+</html>
